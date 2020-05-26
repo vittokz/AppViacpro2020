@@ -1,0 +1,38 @@
+<header no-border class="fondo">
+
+</header>
+<ion-content style="background-color:#fcd04e" padding>
+  <form [formGroup] ="formLogin" style="opacity: 0.9;">
+    <ion-list>
+        <ion-item>
+          <ion-img class="img" src="assets/soloViacpro.png"></ion-img>
+        </ion-item>
+        <ion-item>
+          <ion-label>Identidad</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-input formControlName="identidad" type="number" required></ion-input>   
+      </ion-item>
+
+        <ion-item>
+          <ion-label>Password</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-input formControlName="clave" type="password" required></ion-input>   
+        </ion-item>
+
+        <ion-button (click)="login()" [disabled]="!formLogin.valid" type="submit" color="secondary" expand="full">
+          Ingresar</ion-button>
+    </ion-list>
+  </form>
+   <div class="respuesta" *ngIf="logueado">
+      <span style="color: red; font-size: 14px; font-weight: 500;">
+        <p style="text-align: center;"> Error en los datos ingresados !!!</p></span>
+   </div>
+</ion-content>
+
+<ion-footer class="fondo">         
+  <div class="recuperar">
+    <a style="text-decoration: none;" routerLink="/forgot-password">Recuperar Contraseña ?</a></div>
+  <p class="fondo-footer">VIACPRO</p>
+</ion-footer>

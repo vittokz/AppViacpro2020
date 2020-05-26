@@ -1,0 +1,52 @@
+<app-header no-border></app-header>
+
+<ion-content fullscreen style="background-image: url('assets/login/fondoHome.png');"> 
+  <ion-card>
+    <ion-item  color="secondary">
+     <ion-label style="text-align: center ;font-size:22px;">
+       {{title}}
+     </ion-label>
+   </ion-item>    
+ </ion-card>
+
+  <br>
+  <ion-list style="background-color: #1d1a31;">
+    <ion-item *ngIf="cantidad<=0">
+      <ion-avatar slot="start">
+        <img *ngIf="tipoAlerta=='0'" src="assets/menu/alertas.png">
+        <img *ngIf="tipoAlerta=='1'" src="assets/menu/alertaRojo.png">
+        <img *ngIf="tipoAlerta=='2'" src="assets/menu/alertaAzul.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>No hay Actuaciones.</h2>
+     </ion-label>
+    </ion-item>
+  
+    <ion-item *ngFor="let a of listaActuaciones">
+      <ion-avatar slot="start">
+        <img *ngIf="tipoAlerta=='0'" src="assets/menu/alertas.png">
+        <img *ngIf="tipoAlerta=='1'" src="assets/menu/alertaRojo.png">
+        <img *ngIf="tipoAlerta=='2'" src="assets/menu/alertaAzul.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ a.actuacion}}</h2>
+        <p>Fecha Auto: {{a.fechaAuto}}</p>
+        <p><a style="text-decoration: none; font-size: 18px; font-weight: 800; color: #1d1a31;" target="_blank" href="https://www.viacpro.com/AdminDespacho/procesos/imgProcesos/proceso{{a.idProceso}}/actuaciones/{{a.nombreArchivo}}">Descargar : {{a.nombreArchivo}}</a></p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer> 
+  <ion-segment style="background-color:#1d1a31; color:#ffcf40;">
+          <ion-segment-button style="color:#ffcf40" (click)="regresar()" value="segment1">
+            <ion-icon name="arrow-back-sharp"></ion-icon>
+                          Regresar
+          </ion-segment-button>
+          <ion-segment-button style="color:#ffcf40" (click)="irMenu()" value="segment1">
+           <ion-icon name="home"></ion-icon>
+                         Inicio
+          </ion-segment-button>
+         
+ </ion-segment>
+</ion-footer>

@@ -1,0 +1,42 @@
+<app-header no-border></app-header>
+
+<ion-content paddding>
+  <ion-card>
+    <ion-card-header style="background-color: #1d1a31 !important; color: #ffcf40; text-align: center; font-size: 18px;">
+       <div>Perfil de Usuario</div>
+    </ion-card-header>
+  
+      <ion-list *ngFor="let i of datosPerfil">
+        <ion-img src="assets/menu/perfil.png" style="width: 20%; margin: auto;"></ion-img><hr>
+        <ion-item>
+          <ion-icon slot="start" name="body-outline"></ion-icon>
+          <ion-label>{{ i.cedula_cliente}}</ion-label>
+        </ion-item>
+        <ion-item >
+          <ion-icon slot="start" name="person-outline"></ion-icon>
+          <ion-label>{{ i.empresa}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon  slot="start" name="person-circle-outline"></ion-icon>
+          <ion-label>{{ i.nombre}} {{ i.apellido}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon slot="start" name="phone-portrait-outline"></ion-icon>
+          <ion-label>{{ i.telefono}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon slot="start" name="body-outline"></ion-icon>
+          <ion-label> {{ i.email}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-segment style="background-color:#1d1a31; color:#ffcf40">
+          <ion-segment-button style="color:#ffcf40" (click)="irMenu()" value="segment1">
+           <ion-icon name="home"></ion-icon>
+                         Inicio
+          </ion-segment-button>
+ </ion-segment>
+</ion-footer>

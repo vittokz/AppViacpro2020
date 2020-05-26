@@ -1,0 +1,93 @@
+<app-header no-border></app-header>
+
+<ion-content fullscreen style="background-image: url('assets/login/fondoHome.png');"> 
+  <div style="padding: 5px; text-align: center; background-color: #1d1a31;color: white; font-weight: 600;">
+    Usuario: {{ identidad }}
+  </div>
+  
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button color="tertiary" href="www.facebook.com"><ion-icon name="logo-facebook"></ion-icon></ion-fab-button>
+      <ion-fab-button color="success"><ion-icon name="logo-whatsApp"></ion-icon></ion-fab-button>
+      <ion-fab-button color="warning" href="tel:3116480997">
+             <ion-icon name="call-outline"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="danger"><ion-icon name="power-outline"></ion-icon></ion-fab-button>
+
+    </ion-fab-list>
+  </ion-fab>
+
+  <ion-card>
+    <img src="assets/menu/banner.jpg">
+  
+    <ion-item  color="secondary">
+      <ion-label style="text-align: center;">
+        Menú  Viacpro App
+      </ion-label>
+    </ion-item>
+    
+  </ion-card>
+
+  <ion-list padding style="background-color: #1d1a31;">
+
+    <ion-item routerLink="/perfil/{{ identidad }}">
+      <ion-avatar slot="start">
+        <img src="assets/menu/perfil.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>Mi Perfil</h2>
+        <p>Información personal</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item routerLink="/planes/{{ identidad }}" class="fondo">
+      <ion-avatar slot="start">
+        <img src="assets/menu/folder.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>Planes</h2>
+        <p>Listado de Ciudades donde tiene procesos</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item routerLink="/menu-alertas/{{ identidad }}"> 
+      <ion-avatar slot="start">
+        <img src="assets/menu/alertas.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>Alertas</h2>
+        <p>Actuaciones del día, por vencer y vencidas</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item routerLink="/atencion/{{ identidad }}" class="fondo">
+      <ion-avatar slot="start">
+        <img src="assets/menu/atenciocliente.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>Atención al Cliente</h2>
+        <p>Envíanos tus comentarios y sugerencias.</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="assets/menu/factura.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>Factura</h2>
+        <p>Listado de Facturas</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer> 
+  <ion-segment style="background-color:#1d1a31; color:#ffcf40;">
+           <ion-icon name="home"></ion-icon>
+                         Inicio
+ </ion-segment>
+</ion-footer>

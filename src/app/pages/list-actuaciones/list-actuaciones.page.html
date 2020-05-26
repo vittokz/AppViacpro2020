@@ -1,0 +1,65 @@
+<app-header no-border>
+</app-header>
+
+<ion-content paddding>
+  <ion-card>
+    <ion-card-header style="background-color: #1d1a31 !important; color: #ffcf40; text-align: center; font-size: 18px;">
+       <div>Detalle Proceso</div>
+    </ion-card-header>
+  
+      <ion-list *ngFor="let i of detalleProceso">
+        <ion-item>
+          <ion-icon slot="start" name="person-sharp"></ion-icon>
+          <ion-label style="font-size: 14px; text-align: center;"> Cliente : {{ i.idCliente}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label style="font-size: 12px;"> Radicado : {{ i.idRadicado}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label style="font-size: 12px;"> Demandado : {{ i.demandado}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label style="font-size: 12px;"> Demandante : {{ i.demandante}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label style="font-size: 12px;"> Juzgado : {{ nomJuzgado | uppercase}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+    <hr>
+
+    <ion-list-header lines="full" style="background-color: #1d1a31; color: #ffcf40;">
+      <ion-label>Lista de Actuaciones</ion-label>
+      <ion-label>Total: {{ cantActuaciones}}</ion-label>
+    </ion-list-header>
+
+    <ion-list *ngFor="let item of listaActuaciones; let i = index">
+      <ion-item class="fondo">
+        <ion-label class="ion-text-wrap">
+          <ion-text color="secondary">
+            <h3>{{i+1}}.  {{ item.actuacion}}</h3>
+          </ion-text>
+          <p style="color: #1d1a31;">
+            <ion-button target="_blank" style="text-decoration: none; color: black; font-weight: 800;"
+            href="https://www.viacpro.com/AdminDespacho/procesos/imgProcesos/proceso{{item.idProceso}}/actuaciones/{{item.nombreArchivo}}">
+                Ver Archivo : {{ item.nombreArchivo}}
+            </ion-button> 
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+</ion-content>
+
+<ion-footer> 
+  <ion-segment style="background-color:#1d1a31; color:#ffcf40;">
+          <ion-segment-button style="color:#ffcf40" (click)="regresar()" value="segment1">
+            <ion-icon name="arrow-back-sharp"></ion-icon>
+                          Regresar
+          </ion-segment-button>
+          <ion-segment-button style="color:#ffcf40" (click)="irMenu()" value="segment1">
+           <ion-icon name="home"></ion-icon>
+                         Inicio
+          </ion-segment-button>
+         
+ </ion-segment>
+</ion-footer>

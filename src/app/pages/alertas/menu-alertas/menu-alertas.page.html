@@ -1,0 +1,57 @@
+<app-header no-border></app-header>
+
+<ion-content fullscreen style="background-image: url('assets/login/fondoHome.png');"> 
+  <div style="padding: 10px;">
+    <img src="assets/menu/alertaBuscar.jpg" style="width: 100%;">
+  </div>
+  
+  <ion-card>
+    <ion-item  color="secondary">
+       <ion-label style="text-align: center ;font-size:22px;">
+       Alertas
+      </ion-label>
+    </ion-item>    
+  </ion-card>
+
+  <br>
+  <ion-list padding style="background-color: #1d1a31;">
+    <ion-item routerLink="/detalle-alerta/{{ identidad }}/0" class="fondo">
+      <ion-avatar slot="start">
+        <img src="assets/menu/alertas.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>Alertas del día</h2>
+        <p>Se listarán todas las actuaciones a ver en el dia actual</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item routerLink="/detalle-alerta/{{ identidad }}/1">
+      <ion-avatar slot="start">
+        <img src="assets/menu/alertaRojo.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>Alertas Vencidas</h2>
+        <p>Se listarán todas las actuaciones vencidas hace 5 dias</p>
+      </ion-label>
+    </ion-item>
+   
+    <ion-item routerLink="/detalle-alerta/{{ identidad }}/2" class="fondo"> 
+      <ion-avatar slot="start">
+        <img src="assets/menu/alertaAzul.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>Alertas Por Vencer</h2>
+        <p>Se listarán todas las actuaciones por vencer en 3 dias</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-segment style="background-color:#1d1a31; color:#ffcf40">
+          <ion-segment-button style="color:#ffcf40" (click)="irMenu()" value="segment1">
+           <ion-icon name="home"></ion-icon>
+                         Inicio
+          </ion-segment-button>
+ </ion-segment>
+</ion-footer>
