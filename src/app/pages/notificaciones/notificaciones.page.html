@@ -1,0 +1,30 @@
+<app-header no-border></app-header>
+
+<ion-content paddding>
+  <ion-card>
+    <ion-card-header style="background-color: #1d1a31 !important; color: #ffcf40; text-align: center; font-size: 18px;">
+       <div>Notificaciones</div>
+    </ion-card-header>
+
+      <ion-list>
+         <ion-list-header>
+           <ion-label></ion-label>
+         </ion-list-header>
+         <ion-item *ngFor="let push of mensajes">
+           <ion-label>
+             <h3>{{push.title}}</h3>
+             <p>{{push.body}}</p>
+           </ion-label>
+         </ion-item>
+      </ion-list>
+    </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-segment style="background-color:#1d1a31; color:#ffcf40">
+          <ion-segment-button style="color:#ffcf40" (click)="irMenu()" value="segment1">
+           <ion-icon name="home"></ion-icon>
+                         Inicio
+          </ion-segment-button>
+ </ion-segment>
+</ion-footer>

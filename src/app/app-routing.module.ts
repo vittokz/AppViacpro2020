@@ -67,6 +67,10 @@ const routes: Routes = [
     path: 'detalle-alerta/:id/:tipo',
     loadChildren: () => import('./pages/alertas/detalle-alerta/detalle-alerta.module').then( m => m.DetalleAlertaPageModule)
   },
+  {
+    path: 'notificaciones/:id',
+    loadChildren: () => import('./pages/notificaciones/notificaciones.module').then( m => m.NotificacionesPageModule)
+  },
 ];
 
 @NgModule({

@@ -1,7 +1,8 @@
 {
   "name": "AppViacpro",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }
